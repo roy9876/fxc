@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fallback redirect after 4 seconds -->
+    <meta http-equiv="refresh" content="4; url=https://google.com">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        .box {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>We've Moved!</h2>
+        <!-- Customize your message below -->
+        <p>You are being redirected to our new page in <strong><span id="countdown">4</span></strong> seconds.</p>
+        <p><small>If nothing happens, <a href="https://google.com">click here</a>.</small></p>
+    </div>
+
+    <script>
+        let seconds = 4;
+        const countdownEl = document.getElementById('countdown');
+
+        const timer = setInterval(() => {
+            seconds--;
+            if (seconds > 0) {
+                countdownEl.textContent = seconds;
+            } else {
+                clearInterval(timer);
+                window.location.replace("https://google.com");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
